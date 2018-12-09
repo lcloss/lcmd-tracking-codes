@@ -1,12 +1,12 @@
 # LC Tracking Codes #
-Contributors: @lcloss
-Tags: tracking codes, Google Search, Google Analytics, Google Ads, Google Webmasters, Google Search Console, Bing
-Requires at least: 4.8
-Tested up to: 4.9
-Requires PHP: 7.0
-Stable tag: trunk
-License: AGPL-3.0
-License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
+* Contributors: @lcloss
+* Tags: tracking codes, Google Search, Google Analytics, Google Ads, Google Webmasters, Google Search Console, Bing
+* Requires at least: 4.8
+* Tested up to: 4.9
+* Requires PHP: 7.0
+* Stable tag: trunk
+* License: AGPL-3.0
+* License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
 
 This plugin make easier put tracking codes in your site.
 
@@ -28,20 +28,20 @@ It is very easy to install. There are several ways to do that:
     1. Once installed, click on "Activate" button.
 
 2. From WordPress repository:
-    2. Go to Add new plugin page, on WordPress admin panel
-    2. Search for LC Tracking Code
-    2. Once this plugins is listed, click on Install
-    2. Click on Activate
-    2. That's all.
+    1. Go to Add new plugin page, on WordPress admin panel
+    1. Search for LC Tracking Code
+    1. Once this plugins is listed, click on Install
+    1. Click on Activate
+    1. That's all.
 
 3. From download file:
-    3. Go to Add new plugin page, on WordPress admin panel
-    3. Click on Add new.
-    3. Select the .zip file
-    3. Upload the file
-    3. Look for LC Tracking Code plugin in your plugin list
-    3. Click on Activate.
-    3. That's all.
+    1. Go to Add new plugin page, on WordPress admin panel
+    1. Click on Add new.
+    1. Select the .zip file
+    1. Upload the file
+    1. Look for LC Tracking Code plugin in your plugin list
+    1. Click on Activate.
+    1. That's all.
 
 ## FAQ ##
 [see FAQ](FAQ.md)
