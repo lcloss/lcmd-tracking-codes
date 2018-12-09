@@ -1,7 +1,6 @@
 <?php
 /**
  * Plugin Name:       LC Tracking Codes
- * Plugin URI:        https://.com
  * Description:       LC Tracking Codes make easier put tracking codes in your site.
  * Version:           1.0.0
  * Author:            Luciano Closs
@@ -159,7 +158,6 @@ class LCMD_Tracking_Codes {
          return;
       }
       wp_enqueue_style( 'lcmd-tracking-codes-style', \plugins_url( 'includes/css/admin_options.css', __FILE__ ) );
-      // wp_enqueue_script( 'lcmd-tracking-codes-script', \plugins_url( 'includes/js/admin_script.js', __FILE__ ) );
    }
 
    public function add_admin_inline_scripts()
