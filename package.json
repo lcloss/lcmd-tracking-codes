@@ -1,0 +1,40 @@
+{
+  "name": "lcmd-tracking-codes",
+  "version": "1.0.1",
+  "description": "WordPress plugin to handle tracking codes",
+  "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "gulp": "^4.0.0",
+    "gulp-readme-to-markdown": "^0.2.1",
+    "lodash": ">=4.17.5",
+    "minimatch": ">=3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcloss/lcmd-tracking-codes.git"
+  },
+  "keywords": [
+    "google",
+    "analytics",
+    "google",
+    "search",
+    "console",
+    "google",
+    "tag",
+    "manager",
+    "bing"
+  ],
+  "author": "Luciano Closs",
+  "license": "AGPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/lcloss/lcmd-tracking-codes/issues"
+  },
+  "homepage": "https://github.com/lcloss/lcmd-tracking-codes#readme"
+}
