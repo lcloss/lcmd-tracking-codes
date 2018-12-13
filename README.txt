@@ -1,20 +1,20 @@
 === LC Tracking Codes ===
-Contributors: @lcloss
+Contributors: lcloss
 Tags: tracking codes, Google Search, Google Analytics, Google Ads, Google Webmasters, Google Search Console, Bing
 Requires at least: 4.8
 Tested up to: 4.9
 Requires PHP: 7.0
-Stable tag: trunk
+Stable tag: 1.0.1
 License: AGPL-3.0
 License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
 
 === LC Tracking Codes ===
-Contributors: @lcloss
+Contributors: lcloss
 Tags: tracking codes, Google Search, Google Analytics, Google Ads, Google Webmasters, Google Search Console, Bing
 Requires at least: 4.8
 Tested up to: 4.9
 Requires PHP: 7.0
-Stable tag: trunk
+Stable tag: 1.0.1
 License: AGPL-3.0
 License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
 
@@ -28,7 +28,7 @@ It is also possible to add tracking code from another mechanism, wich is not lis
 == Installation ==
 It is very easy to install. There are several ways to do that:
 1. From Github repository:
-a) Go to (GitHub)[https://github.com/lcloss/lcmd-tracking-codes]
+a) Go to https://github.com/lcloss/lcmd-tracking-codes
 b) Click on "Clone or Download" and than on "Dowmnload ZIP"
 c) Go to your Admnistration panel
 d) Go to Plugins and than Add New Plugin

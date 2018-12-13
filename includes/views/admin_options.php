@@ -2,9 +2,9 @@
     <div id="lcmd-tracking-codes-panel" class="wrap">
         <h1>LC Tracking Codes</h1>
         <h2 class="nav-tab-wrapper">
-            <a href="admin.php?page=lcmd-tracking-codes&tab=google" class="nav-tab">Google</a>
-            <a href="admin.php?page=lcmd-tracking-codes&tab=bing" class="nav-tab">Bing</a>
-            <a href="admin.php?page=lcmd-tracking-codes&tab=general" class="nav-tab">General</a>
+            <a href="admin.php?page=lcmd-tracking-codes&tab=google" class="nav-tab<?php if ( $tab == 'google' ) echo ' nav-tab-active';  ?>">Google</a>
+            <a href="admin.php?page=lcmd-tracking-codes&tab=bing" class="nav-tab<?php if ( $tab == 'bing' ) echo ' nav-tab-active';  ?>">Bing</a>
+            <a href="admin.php?page=lcmd-tracking-codes&tab=general" class="nav-tab<?php if ( $tab == 'general' ) echo ' nav-tab-active';  ?>">General</a>
         </h2>
         <?php settings_errors( 'lcmd_tracking_codes_messages' ); ?>
         <div class="wrap">

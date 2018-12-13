@@ -352,33 +352,36 @@ class LCMD_Tracking_Codes {
          switch( $_POST['tab'] ) {
             case 'google':
                foreach( $google_fields as $i => $field ) {
+                  $has_error = false;
+
                   if ( 'lcmd_gsvf' == $field['name'] ) {
                      // Prepare the upload
                      $dir = get_home_path();
                      $file_name = $_FILES[$field['name']]['name'];
 
-                     $file_name = sanitize_file_name( $file_name );
+                     if ( '' != $file_name ) {
+                        $file_name = sanitize_file_name( $file_name );
 
-                     $has_error = false;
-                     if ( ! preg_match('/^google\w+\.html$/', $file_name) ) {
-                        $errors[] = array(
-                           'id'  => $field['id'],
-                           'msg' => __( 'Invalid file name.', self::get_text_domain() )
-                        );
-                        $has_error = true;
-                     }
-                     if ( '' != $file_name && ! $has_error ) {
-                        $target_file = $dir . '/' . basename( $file_name );
+                        if ( ! preg_match('/^google\w+\.html$/', $file_name) ) {
+                           $errors[] = array(
+                              'id'  => $field['id'],
+                              'msg' => __( 'Invalid file name.', self::get_text_domain() )
+                           );
+                           $has_error = true;
+                        }
 
-                        // Check if name is correct
-                        move_uploaded_file($_FILES[$field['name']]['tmp_name'], $target_file);
-                        update_option($field['name'] . '_name', $file_name);
-                        $google_fields[$i]['value'] = home_url( $file_name );;
+                        if ( ! $has_error ) {
+                           $target_file = $dir . '/' . basename( $file_name );
+   
+                           // Check if name is correct
+                           move_uploaded_file($_FILES[$field['name']]['tmp_name'], $target_file);
+                           update_option($field['name'] . '_name', $file_name);
+                           $google_fields[$i]['value'] = home_url( $file_name );;
+                        }
                      }
                   } else {
                      $p_field = sanitize_text_field( $_POST[$field['name']] );
 
-                     $has_error = false;
                      if ( isset($field['validate']) ) {
                         $e = call_user_func( __NAMESPACE__ . '\\' . $field['validate'], $p_field);
                         if ( ! $e ) {
@@ -400,6 +403,8 @@ class LCMD_Tracking_Codes {
 
             case 'bing':
                foreach( $bing_fields as $i => $field ) {
+                  $has_error = false;
+
                   if ( 'lcmd_bcf' == $field['name'] ) {
                      // Prepare the upload
                      $dir = get_home_path();
@@ -407,7 +412,6 @@ class LCMD_Tracking_Codes {
 
                      $file_name = sanitize_file_name( $file_name );
                      
-                     $has_error = false;
                      if ( 'BingSiteAuth.xml' != $file_name ) {
                         $errors[] = array(
                            'id'  => $field['id'],
@@ -426,7 +430,6 @@ class LCMD_Tracking_Codes {
                   } else {
                      $p_field = sanitize_text_field( $_POST[$field['name']] );
 
-                     $has_error = false;
                      if ( isset($field['validate']) ) {
                         $e = call_user_func( __NAMESPACE__ . '\\' . $field['validate'], $p_field);
                         if ( ! $e ) {
@@ -448,9 +451,9 @@ class LCMD_Tracking_Codes {
 
             case 'general':
                foreach( $general_fields as $i => $field ) {
+                  $has_error = false;
                   $p_field = sanitize_text_field( $_POST[$field['name']] );
 
-                  $has_error = false;
                   if ( isset($field['validate']) ) {
                      $e = call_user_func( __NAMESPACE__ . '\\' . $field['validate'], $p_field);
                      if ( ! $e ) {

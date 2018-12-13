@@ -1,10 +1,10 @@
 # LC Tracking Codes #
-* Contributors: @lcloss
+* Contributors: lcloss
 * Tags: tracking codes, Google Search, Google Analytics, Google Ads, Google Webmasters, Google Search Console, Bing
 * Requires at least: 4.8
 * Tested up to: 4.9
 * Requires PHP: 7.0
-* Stable tag: trunk
+* Stable tag: 1.0.1
 * License: AGPL-3.0
 * License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
 
@@ -45,6 +45,7 @@ It is very easy to install. There are several ways to do that:
 
 ## FAQ ##
 [see FAQ](FAQ.md)
+* No FAQ yet.
 
 ## Screenshots ##
 1. Plugin admin area
@@ -54,7 +55,7 @@ It is very easy to install. There are several ways to do that:
 
 ## Change Log ##
 [see CHANGELOG](CHANGELOG.md)
-1.0.0 - Initial version
+* 1.0.0 - Initial version
 
 ## Upgrade Notice ##
 No upgrade notice

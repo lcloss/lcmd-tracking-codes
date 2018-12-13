@@ -7,7 +7,7 @@ if ( ! function_exists( 'is_google_analytics_id' ) ) {
             return true;
         }
 
-        if ( preg_match('/^UA-\d{4-10}-\d{1,4}$/i', $ga_code) ) {
+        if ( preg_match('/^UA-\d{4,10}-\d{1,4}$/i', $ga_code) ) {
             return true;
         } else {
             return false;
@@ -32,7 +32,7 @@ if ( ! function_exists( 'is_google_verification_code' ) ) {
         if ( '' == $gv_code ) {
             return true;
         }
-        if ( preg_match('/^[\w_]{5-40}$/i', $gv_code) ) {
+        if ( preg_match('/^[\w_]{5,40}$/i', $gv_code) ) {
             return true;
         } else {
             return false;
@@ -44,7 +44,7 @@ if ( ! function_exists( 'is_google_tag_manager_id' ) ) {
         if ( '' == $gtm_id ) {
             return true;
         }
-        if ( preg_match('/^GTM-\d{1, 9}$/i', $gtm_id) ) {
+        if ( preg_match('/^GTM-\d{1,9}$/i', $gtm_id) ) {
             return true;
         } else {
             return false;
@@ -56,7 +56,7 @@ if ( ! function_exists( 'is_bing_code' ) ) {
         if ( '' == $ms_bc ) {
             return true;
         }
-        if ( preg_match('/^[\w]{5, 30}$/i', $ms_bc) ) {
+        if ( preg_match('/^[\w]{5,30}$/i', $ms_bc) ) {
             return true;
         } else {
             return false;
