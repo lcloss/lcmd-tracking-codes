@@ -1,0 +1,240 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LC Tracking Codes\n"
+"POT-Creation-Date: 2018-12-13 13:07+0000\n"
+"PO-Revision-Date: 2018-12-13 13:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: lcmd-tracking-codes.php\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: includes/views/admin_options.php:26 includes/views/admin_options.php:53
+msgid "Delete"
+msgstr "Apagar"
+
+#: includes/views/admin_options.php:34 includes/views/admin_options.php:61
+#: includes/views/admin_options.php:77
+msgid "Save Settings"
+msgstr "Salvar configurações"
+
+#: lcmd-tracking-codes.php:36
+msgid "You should not be here. Stay in peace"
+msgstr "Você não devia estar aqui. Fique em paz"
+
+#: lcmd-tracking-codes.php:201
+msgid "File not found."
+msgstr "Arquivo não encontrado."
+
+#: lcmd-tracking-codes.php:206
+msgid "File deleted successfully."
+msgstr "Arquivo excluído com sucesso."
+
+#: lcmd-tracking-codes.php:209
+msgid "Failed on file delete"
+msgstr "Falha na exclusão do arquivo."
+
+#: lcmd-tracking-codes.php:247
+msgid "Google Search Console Verification Code"
+msgstr "Código de verificação do Google Search Console"
+
+#: lcmd-tracking-codes.php:248
+msgid "Verification code"
+msgstr "Código de verificação "
+
+#: lcmd-tracking-codes.php:249
+msgid ""
+"Enter your Google Site Verification Code. Please, refer to <a href=\"https://"
+"search.google.com/search-console/about\" target=\"_blank\">Google Search "
+"Console</a> for more information.</a>"
+msgstr ""
+"Digite seu código de verificação do Site Google. Por favor, consulte <a href="
+"\"https://search.google.com/search-console/about\" target=\"_blank\">Google "
+"Search Console</a> para obter mais informações."
+
+#: lcmd-tracking-codes.php:251
+msgid ""
+"Invalid format for Google Verification Code. Please, enter only letters, "
+"numbers and/or underscode."
+msgstr ""
+"Formato inválido para o código de verificação do Google. Por favor, digite "
+"somente letras, números e/ou underscode."
+
+#: lcmd-tracking-codes.php:256
+msgid "...or Google Search Console Verification File"
+msgstr "... ou o arquivo de verificação do Google Search Console"
+
+#: lcmd-tracking-codes.php:258
+msgid ""
+"Upload your verification file. Please, refer to <a href=\"https://search."
+"google.com/search-console/about\" target=\"_blank\">Google Search Console</"
+"a> for more information.</a>"
+msgstr ""
+"Faça upload do arquivo de verificação. Por favor, consulte <a href=\"https://"
+"search.google.com/search-console/about\" target=\"_blank\">Google Search "
+"Console</a> para obter mais informações."
+
+#: lcmd-tracking-codes.php:260
+msgid ""
+"This is not seem to be a valid Google Search Console file. Please, verify "
+"the file and resubmit."
+msgstr ""
+"Isto é não parece ser um arquivo válido do Google Search Console. Por favor, "
+"verifique o arquivo e reenvie."
+
+#: lcmd-tracking-codes.php:265
+msgid "Google Analytics User"
+msgstr "Usuário do Google Analytics"
+
+#: lcmd-tracking-codes.php:266
+msgid "UA-XXXXXX-X"
+msgstr "UA-XXXXXX-X"
+
+#: lcmd-tracking-codes.php:267
+msgid ""
+"Enter your ID Tracking Code for Google Analytics. Please, refer to <a href="
+"\"https://analytics.google.com/analytics/web/\" target=\"_blank\">Google "
+"Analytics</a> for more information."
+msgstr ""
+"Digite seu ID de acompanhamento do Google Analytics. Por favor, consulte o "
+"<a href=\"https://analytics.google.com/analytics/web/\" target=\"_blank"
+"\">Google Analytics</a> para obter mais informações."
+
+#: lcmd-tracking-codes.php:269
+msgid "Invalid format for Google Analytics. Please, enter a UA-XXXX code."
+msgstr ""
+"Formato inválido para o Google Analytics. Por favor, insira um código UA-"
+"XXXX."
+
+#: lcmd-tracking-codes.php:274
+msgid "Google Tag Manager"
+msgstr "Google Tag Manager"
+
+#: lcmd-tracking-codes.php:275
+msgid "GTM-XXXXXX"
+msgstr "GTM-XXXXXX"
+
+#: lcmd-tracking-codes.php:276
+msgid ""
+"Enter your ID Google Tag Manager. Please, refer to <a href=\"https://"
+"tagmanager.google.com\" target=\"_blank\">Google Tag Manager</a> for more "
+"information."
+msgstr ""
+"Digite seu ID do Google Tag Manager. Por favor, consulte o<a href=\"https://"
+"tagmanager.google.com\" target=\"_blank\">Google Tag Manager</a> para obter "
+"mais informações."
+
+#: lcmd-tracking-codes.php:278
+msgid ""
+"Invalid format for Google Tag Manager Id. Please, enter a GTM-XXXX code."
+msgstr ""
+"Formato inválido para ID do Google Tag Manager. Por favor, digite um código "
+"de GTM-XXXX."
+
+#: lcmd-tracking-codes.php:283
+msgid "Google Ads"
+msgstr "Google Ads"
+
+#: lcmd-tracking-codes.php:284
+msgid "GA-XXXXXX"
+msgstr "GA-XXXXXX"
+
+#: lcmd-tracking-codes.php:285
+msgid ""
+"Enter your ID Google Ads. Please, refer to <a href=\"https://ads.google.com"
+"\" target=\"_blank\">Google Ads</a> for more information."
+msgstr ""
+"Digite seu ID do Google Ads. Por favor, consulte <a href=\"https://ads."
+"google.com\" target=\"_blank\">Google Ads</a> para obter mais informações."
+
+#: lcmd-tracking-codes.php:292
+msgid "Bing Code"
+msgstr "Código do Bing"
+
+#: lcmd-tracking-codes.php:293
+msgid ""
+"Enter your Bing Code. Please, refer to <a href=\"https://www.bing.com/"
+"toolbox/webmaster\" target=\"_blank\">Bing Webmaster</a> for more "
+"information."
+msgstr ""
+"Digite seu código de verificação Bing. Por favor, consulte <a href=\"https://"
+"www.bing.com/toolbox/webmaster\" target=\"_blank\">Bing Webmaster</a> para "
+"obter mais informações."
+
+#: lcmd-tracking-codes.php:295
+msgid ""
+"Invalid format for your Bing Code. Please, enter only numbers and letters."
+msgstr ""
+"Formato inválido para o seu código de verificação Bing. Por favor, digite "
+"somente números e letras."
+
+#: lcmd-tracking-codes.php:300
+msgid "...or Bing Code File"
+msgstr "... ou arquivo de verificação do Bing"
+
+#: lcmd-tracking-codes.php:301
+msgid ""
+"Upload your Bing File. Please, refer to <a href=\"https://www.bing.com/"
+"toolbox/webmaster\" target=\"_blank\">Bing Webmaster</a> for more "
+"information."
+msgstr ""
+"Faça upload de seu arquivo de verificação do Bing. Por favor, consulte o <a "
+"href=\"https://www.bing.com/toolbox/webmaster\" target=\"_blank\">Bing "
+"Webmaster</a> para obter mais informações."
+
+#: lcmd-tracking-codes.php:303
+msgid ""
+"This is not seem to be a valid Bing Webmaster file. Please, verify the file "
+"and resubmit."
+msgstr ""
+"Isso não é parece ser um arquivo válido do Bing Webmaster. Por favor, "
+"verifique o arquivo e reenvie."
+
+#: lcmd-tracking-codes.php:310
+msgid "General Tracking Code"
+msgstr "Código de acompanhamento genérico"
+
+#: lcmd-tracking-codes.php:311
+msgid "Enter a custom tracking code."
+msgstr "Introduza um código de rastreamento personalizado."
+
+#: lcmd-tracking-codes.php:368 lcmd-tracking-codes.php:418
+msgid "Invalid file name."
+msgstr "Nome de arquivo inválido."
+
+#: lcmd-tracking-codes.php:479
+msgid "Settings saved!"
+msgstr "Configurações salvas!"
+
+#. Plugin Name of the plugin/theme
+msgid "LC Tracking Codes"
+msgstr "LC Tracking Codes"
+
+#. Plugin URI of the plugin/theme
+msgid "https://github.com/lcloss/lcmd-tracking-codes"
+msgstr "https://github.com/lcloss/lcmd-tracking-codes"
+
+#. Description of the plugin/theme
+msgid "LC Tracking Codes make easier put tracking codes in your site."
+msgstr ""
+"LC Tracking Codes torna muito mais fácil colocar códigos de rastreamento em "
+"seu site."
+
+#. Author of the plugin/theme
+msgid "Luciano Closs"
+msgstr "Luciano Closs"
+
+#. Author URI of the plugin/theme
+msgid "https://lucianocloss.com"
+msgstr "https://lucianocloss.com"

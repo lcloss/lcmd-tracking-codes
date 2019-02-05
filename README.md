@@ -4,7 +4,7 @@
 * Requires at least: 4.8
 * Tested up to: 4.9
 * Requires PHP: 7.0
-* Stable tag: 1.0.1
+* Stable tag: 1.1.0
 * License: AGPL-3.0
 * License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
 
@@ -56,6 +56,10 @@ It is very easy to install. There are several ways to do that:
 ## Change Log ##
 [see CHANGELOG](CHANGELOG.md)
 * 1.0.0 - Initial version
+* 1.0.1 - Fix UA- validation
+* 1.0.2 - Update version
+* 1.0.3 - Fix GTM- validation + Brazilian language
+
 
 ## Upgrade Notice ##
 No upgrade notice

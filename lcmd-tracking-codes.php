@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       LC Tracking Codes
  * Description:       LC Tracking Codes make easier put tracking codes in your site.
- * Version:           1.0.0
+ * Version:           1.0.3
  * Author:            Luciano Closs
  * Author URI:        https://lucianocloss.com
  * Text Domain:       lcmd-tracking-codes
@@ -100,6 +100,9 @@ class LCMD_Tracking_Codes {
       add_action( 'wp_head', array( $this, 'add_google_search_console' ) , 2 );
       // Add Meta Bing Webmaster
       add_action( 'wp_head', array( $this, 'add_bing_webmaster' ) , 2 );
+
+      // Add Contact Form 7 Google Analytics
+      add_action( 'wp_footer', array( $this, 'add_contact_form_7_google_analytics' ) , 2 );
       
       // Add General Tracking Code
       add_action( 'wp_footer', array( $this, 'add_general_code' ) );
@@ -214,11 +217,17 @@ class LCMD_Tracking_Codes {
    public function register_settings()
    {
       $settings_group = 'lcmd_tracking_codes_settings';
-      register_setting(  $settings_group . '_google', 'lcmd_gscvc' );
-      register_setting(  $settings_group . '_google', 'lcmd_gau' );
-      register_setting(  $settings_group . '_google', 'lcmd_gtm' );
-      register_setting(  $settings_group . '_google', 'lcmd_gad' );
-      register_setting(  $settings_group . '_bing', 'lcmd_buid' );
+      register_setting(  $settings_group . '_settings', 'lcmd_hide_when_auth' );   // Settings: Hide when user is authenticated
+      register_setting(  $settings_group . '_google', 'lcmd_gscvc' );   // Google Search Console Verification Code
+      register_setting(  $settings_group . '_google', 'lcmd_gscvf' );   // Google Search Console Verification File
+      register_setting(  $settings_group . '_google', 'lcmd_gau' );     // Google Analitics Userid
+      register_setting(  $settings_group . '_google', 'lcmd_gtm' );     // Google Tag Manager
+      register_setting(  $settings_group . '_google', 'lcmd_gad' );     // Google Ads
+      // register_setting(  $settings_group . '_google', 'lcmd_grc' );     // Google Remarketing Code
+      register_setting(  $settings_group . '_bing', 'lcmd_bc' );        // Bing Code
+      register_setting(  $settings_group . '_bing', 'lcmd_bcf' );       // Bing Verification File
+      register_setting(  $settings_group . '_wpcf7', 'lcmd_cf7ga' );    // Contact Form 7 - Google Analytics
+      register_setting(  $settings_group . '_general', 'lcmd_general' );   // General Code
    }
 
    /**
@@ -240,7 +249,18 @@ class LCMD_Tracking_Codes {
          $tab = $_GET['tab'];
       }
 
+      $settings_fields = array(
+         /* Hide on Admin */
+         array(
+            'name'   => 'lcmd_hide_when_auth',
+            'id'     => 'lcmd_hide_when_auth',
+            'label'  => __('Hide when a logged user is navigating', self::get_text_domain() ),
+            'help'   => __('Set to true to hide all codes when a logged user is navigating through the site.', self::get_text_domain() ),
+         ),
+      );
+
       $google_fields = array(
+         /* Google Search Console Verification Code */
          array(
             'name'   => 'lcmd_gsvc',
             'id'     => 'lcmd_gsvc',
@@ -248,8 +268,9 @@ class LCMD_Tracking_Codes {
             'placeholder'  => __( 'Verification code', self::get_text_domain() ),
             'help'   => __('Enter your Google Site Verification Code. Please, refer to <a href="https://search.google.com/search-console/about" target="_blank">Google Search Console</a> for more information.</a>', self::get_text_domain() ),
             'validate'  => 'is_google_verification_code',
-            'error_msg' => __( 'Invalid format for Google Verification Code. Please, enter only letters, numbers and/or underscode.', self::get_text_domain() )
+            'error_msg' => __( 'Invalid format for Google Verification Code. Please, enter only letters, numbers and/or underscore.', self::get_text_domain() )
          ),
+         /* Google Search Console Verification File */
          array(
             'name'   => 'lcmd_gsvf',
             'id'     => 'lcmd_gsvf',
@@ -259,6 +280,7 @@ class LCMD_Tracking_Codes {
             'validate'  => 'is_google_search_console_file_ok',
             'error_msg' => __( 'This is not seem to be a valid Google Search Console file. Please, verify the file and resubmit.', self::get_text_domain() ),
          ),
+         /* Google Analytics Userid */
          array(
             'name'   => 'lcmd_gau',
             'id'     => 'lcmd_gau',
@@ -268,6 +290,7 @@ class LCMD_Tracking_Codes {
             'validate'  => 'is_google_analytics_id',
             'error_msg' => __( 'Invalid format for Google Analytics. Please, enter a UA-XXXX code.', self::get_text_domain() )
          ),
+         /* Google Tag Manager */
          array(
             'name'   => 'lcmd_gtm',
             'id'     => 'lcmd_gtm',
@@ -277,6 +300,7 @@ class LCMD_Tracking_Codes {
             'validate'  => 'is_google_tag_manager_id',
             'error_msg' => __( 'Invalid format for Google Tag Manager Id. Please, enter a GTM-XXXX code.', self::get_text_domain() )
          ),
+         /* Google Ads */
          array(
             'name'   => 'lcmd_gad',
             'id'     => 'lcmd_gad',
@@ -284,8 +308,19 @@ class LCMD_Tracking_Codes {
             'placeholder'  => __( 'GA-XXXXXX', self::get_text_domain() ),
             'help'   => __('Enter your ID Google Ads. Please, refer to <a href="https://ads.google.com" target="_blank">Google Ads</a> for more information.', self::get_text_domain() )
          ),
+         /* Google Remarketing Code */
+         /*
+         array(
+            'name'   => 'lcmd_grc',
+            'id'     => 'lcmd_grc',
+            'label'  => __('Google Remarketing', self::get_text_domain() ),
+            'placeholder'  => __( 'XXXXXXXX', self::get_text_domain() ),
+            'help'   => __('Enter your ID Google Remarketing Code. Please, refer to <a href="https://support.google.com/google-ads/answer/2476688?co=ADWORDS.IsAWNCustomer%3Dtrue&hl=pt-BR&oco=0" target="_blank">Google Remarketing</a> for more information.', self::get_text_domain() )
+         ),
+         */
       );
       $bing_fields = array(
+         /* Bing Code */
          array(
             'name'   => 'lcmd_bc',
             'id'     => 'lcmd_bc',
@@ -294,6 +329,7 @@ class LCMD_Tracking_Codes {
             'validate'  => 'is_bing_code',
             'error_msg' => __( 'Invalid format for your Bing Code. Please, enter only numbers and letters.', self::get_text_domain() )
          ),
+         /* Bing Code File */
          array(
             'name'   => 'lcmd_bcf',
             'id'     => 'lcmd_bcf',
@@ -303,7 +339,19 @@ class LCMD_Tracking_Codes {
             'error_msg' => __( 'This is not seem to be a valid Bing Webmaster file. Please, verify the file and resubmit.', self::get_text_domain() ),
          )
       );
+
+      $wpcf7_fields = array(
+         /* Contact Form 7 - Google Analytics */
+         array(
+            'name'   => 'lcmd_cf7ga',
+            'id'     => 'lcmd_cf7ga',
+            'label'  => __('Do you want track Contact Form 7 submission no Google Analytics?', self::get_text_domain()),
+            'help'   => __('Set this to true to start tag forms submission.', self::get_text_domain()),
+         )
+      );
+
       $general_fields = array(
+         /* General fields */
          array(
             'name'   => 'lcmd_general',
             'id'     => 'lcmd_general',
@@ -315,6 +363,12 @@ class LCMD_Tracking_Codes {
       /**
        * Get field values
        */
+      /* Settings Fields */
+      foreach( $settings_fields as $i => $field ) {
+         $settings_fields[$i]['value'] = get_option($field['name']);
+      }
+
+      /* Google Fields */
       foreach( $google_fields as $i => $field ) {
          if ( 'lcmd_gsvf' != $field['name'] ) {
             $google_fields[$i]['value'] = get_option($field['name']);
@@ -327,6 +381,7 @@ class LCMD_Tracking_Codes {
             }
          }
       }
+      /* Bing Fields */
       foreach( $bing_fields as $i => $field ) {
          if ( 'lcmd_bcf' != $field['name'] ) {
             $bing_fields[$i]['value'] = get_option($field['name']);
@@ -339,6 +394,11 @@ class LCMD_Tracking_Codes {
             }
          }
       }
+      /* Contact Form 7 Fields */
+      foreach( $wpcf7_fields as $i => $field ) {
+         $wpcf7_fields[$i]['value'] = get_option($field['name']);
+      }
+      /* General field */
       foreach( $general_fields as $i => $field ) {
          $general_fields[$i]['value'] = get_option($field['name']);
       }
@@ -350,6 +410,32 @@ class LCMD_Tracking_Codes {
        */
       if ( isset($_POST['tab']) ) {
          switch( $_POST['tab'] ) {
+
+            /* Settings Fields Validation */
+            case 'settings':
+               foreach( $settings_fields as $i => $field ) {
+                  $has_error = false;
+                  $p_field = sanitize_text_field( $_POST[$field['name']] );
+
+                  if ( isset($field['validate']) ) {
+                     $e = call_user_func( __NAMESPACE__ . '\\' . $field['validate'], $p_field);
+                     if ( ! $e ) {
+                        $errors[] = array(
+                           'id'  => $field['id'],
+                           'msg' => $field['error_msg']
+                        );
+                        $has_error = true;
+                     }
+                  }
+                  
+                  if ( ! $has_error ) {
+                     update_option($field['name'], $p_field);
+                     $settings_fields[$i]['value'] = $p_field;
+                  }
+               }
+               break;
+
+            /* Google Fields Validation*/
             case 'google':
                foreach( $google_fields as $i => $field ) {
                   $has_error = false;
@@ -401,6 +487,7 @@ class LCMD_Tracking_Codes {
                }
                break;
 
+            /* Bing Fields Validation */
             case 'bing':
                foreach( $bing_fields as $i => $field ) {
                   $has_error = false;
@@ -449,6 +536,31 @@ class LCMD_Tracking_Codes {
                }
                break;
 
+            /* Contact Form 7 Fields Validation */
+            case 'wpcf7':
+               foreach( $wpcf7_fields as $i => $field ) {
+                  $has_error = false;
+                  $p_field = sanitize_text_field( $_POST[$field['name']] );
+
+                  if ( isset($field['validate']) ) {
+                     $e = call_user_func( __NAMESPACE__ . '\\' . $field['validate'], $p_field);
+                     if ( ! $e ) {
+                        $errors[] = array(
+                           'id'  => $field['id'],
+                           'msg' => $field['error_msg']
+                        );
+                        $has_error = true;
+                     }
+                  }
+                  
+                  if ( ! $has_error ) {
+                     update_option($field['name'], $p_field);
+                     $wpcf7_fields[$i]['value'] = $p_field;
+                  }
+               }
+               break;
+
+            /* General Fields Validation */
             case 'general':
                foreach( $general_fields as $i => $field ) {
                   $has_error = false;
@@ -487,12 +599,32 @@ class LCMD_Tracking_Codes {
       include self::get_plugin_path() . '/includes/views/admin_options.php';
    }
 
+   public function is_hidden() 
+   {
+
+      $hide_when = ( get_option('lcmd_hide_when_auth', "0") );
+      
+      if ( empty( $hide_when ) ) {
+         $hide = false;
+      } else {
+         $hide_when = intval($hide_when);
+
+         if ( $hide_when && is_user_logged_in() ) {
+            $hide = true;
+         } else {
+            $hide = false;
+         }
+      }
+
+      return $hide;
+   }
+
    /**
     * Add Google Search Console Meta Tag
     */
    public function add_google_search_console() {
       $gsc_code = get_option('lcmd_gsvc');
-      if ( ! empty($gsc_code) && ! is_user_logged_in() ) {
+      if ( ! empty($gsc_code) && ! $this->is_hidden() ) {
          echo '<meta name="google-site-verification" content="' . $gsc_code . '">';
       }
    }
@@ -502,7 +634,7 @@ class LCMD_Tracking_Codes {
     */
    public function add_google_analytics() {
       $ga_uid = get_option('lcmd_gau');
-      if ( ! empty($ga_uid) && ! is_user_logged_in() ) {
+      if ( ! empty($ga_uid) && ! $this->is_hidden() ) {
         echo '
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=' . $ga_uid . '"></script>
@@ -522,8 +654,24 @@ class LCMD_Tracking_Codes {
     */
     public function add_bing_webmaster() {
       $bw_code = get_option('lcmd_bc');
-      if ( ! empty($bw_code) && ! is_user_logged_in() ) {
+      if ( ! empty($bw_code) && ! $this->is_hidden() ) {
          echo '<meta name="msvalidate.01" content="' . $bw_code . '">';
+      }
+   }
+
+   /**
+    * Add Contact Form 7 Google Analytics
+    */
+    public function add_contact_form_7_google_analytics() {
+      $cf7_ga = get_option('lcmd_cf7ga');
+      if ( ! empty($cf7_ga) && ! $this->is_hidden()  ) {
+        echo '
+        <script>
+         document.addEventListener( \'wpcf7mailsent\', function( event ) {
+            ga(\'send\', \'event\', \'Contact Form\', \'submit\');
+         }, false );
+         </script>
+        ';
       }
    }
 
@@ -533,9 +681,8 @@ class LCMD_Tracking_Codes {
    public function add_general_code() 
    {
       $general = get_option('lcmd_general');
-      if ( ! empty($general) && ! is_user_logged_in() ) {
-        echo esc_js( $general );
-      }
+      // Allway publish general code.
+      echo '<script>' . esc_js( $general ) . '</script>';
    }
 }
 

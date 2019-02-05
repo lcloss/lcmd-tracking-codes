@@ -4,17 +4,7 @@ Tags: tracking codes, Google Search, Google Analytics, Google Ads, Google Webmas
 Requires at least: 4.8
 Tested up to: 4.9
 Requires PHP: 7.0
-Stable tag: 1.0.1
-License: AGPL-3.0
-License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
-
-=== LC Tracking Codes ===
-Contributors: lcloss
-Tags: tracking codes, Google Search, Google Analytics, Google Ads, Google Webmasters, Google Search Console, Bing
-Requires at least: 4.8
-Tested up to: 4.9
-Requires PHP: 7.0
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: AGPL-3.0
 License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
 
@@ -64,6 +54,9 @@ No FAQ yet.
 
 == Changelog ==
 1.0.0 - Initial version
+1.0.1 - Fix UA validation
+1.0.2 - Update version
+1.0.3 - Fix GTM- validation + Brazilian language
 
 == Upgrade Notice ==
 No upgrade notice
