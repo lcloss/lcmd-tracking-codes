@@ -2,9 +2,9 @@
 * Contributors: lcloss
 * Tags: tracking codes, Google Search, Google Analytics, Google Ads, Google Webmasters, Google Search Console, Bing
 * Requires at least: 4.8
-* Tested up to: 4.9
+* Tested up to: 5.0.3
 * Requires PHP: 7.0
-* Stable tag: 1.1.0
+* Stable tag: 1.1.1
 * License: AGPL-3.0
 * License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
 
