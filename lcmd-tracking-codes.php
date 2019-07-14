@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       LC Tracking Codes
  * Description:       LC Tracking Codes make easier put tracking codes in your site.
- * Version:           1.0.3
+ * Version:           1.1.2
  * Author:            Luciano Closs
  * Author URI:        https://lucianocloss.com
  * Text Domain:       lcmd-tracking-codes
@@ -96,14 +96,19 @@ class LCMD_Tracking_Codes {
 
       // Add scripts
       add_action( 'wp_head', array( $this, 'add_google_analytics' ) );
+      add_action( 'wp_head', array( $this, 'add_google_tag_manager_header' ) );
+
       // Add Meta Search Console
       add_action( 'wp_head', array( $this, 'add_google_search_console' ) , 2 );
       // Add Meta Bing Webmaster
       add_action( 'wp_head', array( $this, 'add_bing_webmaster' ) , 2 );
 
-      // Add Contact Form 7 Google Analytics
-      add_action( 'wp_footer', array( $this, 'add_contact_form_7_google_analytics' ) , 2 );
+      // Add Google Tag Manager iframe
+      add_action( 'after_body', array( $this, 'add_google_tag_manager_body' ) );
       
+      // Add GTM HTML
+      add_action( 'wp_footer', array( $this, 'add_contact_form_7_google_analytics' ) , 2 );
+
       // Add General Tracking Code
       add_action( 'wp_footer', array( $this, 'add_general_code' ) );
 
@@ -296,7 +301,7 @@ class LCMD_Tracking_Codes {
             'id'     => 'lcmd_gtm',
             'label'  => __('Google Tag Manager', self::get_text_domain() ),
             'placeholder'  => __( 'GTM-XXXXXX', self::get_text_domain() ),
-            'help'   => __('Enter your ID Google Tag Manager. Please, refer to <a href="https://tagmanager.google.com" target="_blank">Google Tag Manager</a> for more information.', self::get_text_domain() ),
+            'help'   => __('Enter your ID Google Tag Manager. Please, refer to <a href="https://tagmanager.google.com" target="_blank">Google Tag Manager</a> for more information.<br>Also, <strong>Go to <code>Appearence &gt; Editor</code> and look for <code>header.php</code>. Put this just after &lt;body&gt; tag: <code>&lt;?php do_action(\'after_body\'); ?&gt;</code></strong>', self::get_text_domain() ),
             'validate'  => 'is_google_tag_manager_id',
             'error_msg' => __( 'Invalid format for Google Tag Manager Id. Please, enter a GTM-XXXX code.', self::get_text_domain() )
          ),
@@ -648,6 +653,33 @@ class LCMD_Tracking_Codes {
         ';
       }
    }
+
+   /**
+    * Add Google Tag Manager on Header
+    */
+    public function add_google_tag_manager_header() {
+      $gtm_uid = get_option('lcmd_gtm');
+
+       echo '<!-- Google Tag Manager -->
+       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({\'gtm.start\':
+       new Date().getTime(),event:\'gtm.js\'});var f=d.getElementsByTagName(s)[0],
+       j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';j.async=true;j.src=
+       \'https://www.googletagmanager.com/gtm.js?id=\'+i+dl;f.parentNode.insertBefore(j,f);
+       })(window,document,\'script\',\'dataLayer\',\'' . $gtm_uid . '\');</script>
+       <!-- End Google Tag Manager -->';
+    }
+
+   /**
+    * Add Google Tag Manager on Body
+    */
+    public function add_google_tag_manager_body() {
+      $gtm_uid = get_option('lcmd_gtm');
+
+       echo '<!-- Google Tag Manager (noscript) -->
+       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id='. $gtm_uid . '"
+       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+       <!-- End Google Tag Manager (noscript) -->';
+    }
 
    /**
     * Add Bing Webmaster Meta Tag

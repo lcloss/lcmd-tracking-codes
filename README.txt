@@ -4,7 +4,7 @@ Tags: tracking codes, Google Search, Google Analytics, Google Ads, Google Webmas
 Requires at least: 4.8
 Tested up to: 5.0.3
 Requires PHP: 7.0
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: AGPL-3.0
 License URI: https://www.gnu.org/licenses/agpl-3.0.en.html
 

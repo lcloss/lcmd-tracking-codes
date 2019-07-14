@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: LC Tracking Codes\n"
-"POT-Creation-Date: 2018-12-13 13:07+0000\n"
-"PO-Revision-Date: 2018-12-13 13:16+0000\n"
+"POT-Creation-Date: 2019-02-07 00:06+0000\n"
+"PO-Revision-Date: 2019-02-07 00:12+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -20,40 +20,57 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: includes/views/admin_options.php:26 includes/views/admin_options.php:53
-msgid "Delete"
-msgstr "Apagar"
+#: includes/views/admin_options.php:15
+msgid "Settings"
+msgstr "Definições"
 
-#: includes/views/admin_options.php:34 includes/views/admin_options.php:61
-#: includes/views/admin_options.php:77
+#: includes/views/admin_options.php:26 includes/views/admin_options.php:53
+#: includes/views/admin_options.php:80 includes/views/admin_options.php:96
+#: includes/views/admin_options.php:112
 msgid "Save Settings"
 msgstr "Salvar configurações"
+
+#: includes/views/admin_options.php:45 includes/views/admin_options.php:72
+msgid "Delete"
+msgstr "Apagar"
 
 #: lcmd-tracking-codes.php:36
 msgid "You should not be here. Stay in peace"
 msgstr "Você não devia estar aqui. Fique em paz"
 
-#: lcmd-tracking-codes.php:201
+#: lcmd-tracking-codes.php:209
 msgid "File not found."
 msgstr "Arquivo não encontrado."
 
-#: lcmd-tracking-codes.php:206
+#: lcmd-tracking-codes.php:214
 msgid "File deleted successfully."
 msgstr "Arquivo excluído com sucesso."
 
-#: lcmd-tracking-codes.php:209
+#: lcmd-tracking-codes.php:217
 msgid "Failed on file delete"
 msgstr "Falha na exclusão do arquivo."
 
-#: lcmd-tracking-codes.php:247
+#: lcmd-tracking-codes.php:262
+msgid "Hide when a logged user is navigating"
+msgstr "Esconder quando o usuário autenticado estiver navegando"
+
+#: lcmd-tracking-codes.php:263
+msgid ""
+"Set to true to hide all codes when a logged user is navigating through the "
+"site."
+msgstr ""
+"Defina como verdadeiro para ocultar todos os códigos quando um usuário "
+"autenticado estiver navegando pelo site."
+
+#: lcmd-tracking-codes.php:272
 msgid "Google Search Console Verification Code"
 msgstr "Código de verificação do Google Search Console"
 
-#: lcmd-tracking-codes.php:248
+#: lcmd-tracking-codes.php:273
 msgid "Verification code"
 msgstr "Código de verificação "
 
-#: lcmd-tracking-codes.php:249
+#: lcmd-tracking-codes.php:274
 msgid ""
 "Enter your Google Site Verification Code. Please, refer to <a href=\"https://"
 "search.google.com/search-console/about\" target=\"_blank\">Google Search "
@@ -63,19 +80,19 @@ msgstr ""
 "\"https://search.google.com/search-console/about\" target=\"_blank\">Google "
 "Search Console</a> para obter mais informações."
 
-#: lcmd-tracking-codes.php:251
+#: lcmd-tracking-codes.php:276
 msgid ""
 "Invalid format for Google Verification Code. Please, enter only letters, "
-"numbers and/or underscode."
+"numbers and/or underscore."
 msgstr ""
-"Formato inválido para o código de verificação do Google. Por favor, digite "
-"somente letras, números e/ou underscode."
+"Formato inválido para o Google Verification Code. Por favor, entre somente "
+"com letras, números e/ou underscore."
 
-#: lcmd-tracking-codes.php:256
+#: lcmd-tracking-codes.php:282
 msgid "...or Google Search Console Verification File"
 msgstr "... ou o arquivo de verificação do Google Search Console"
 
-#: lcmd-tracking-codes.php:258
+#: lcmd-tracking-codes.php:284
 msgid ""
 "Upload your verification file. Please, refer to <a href=\"https://search."
 "google.com/search-console/about\" target=\"_blank\">Google Search Console</"
@@ -85,7 +102,7 @@ msgstr ""
 "search.google.com/search-console/about\" target=\"_blank\">Google Search "
 "Console</a> para obter mais informações."
 
-#: lcmd-tracking-codes.php:260
+#: lcmd-tracking-codes.php:286
 msgid ""
 "This is not seem to be a valid Google Search Console file. Please, verify "
 "the file and resubmit."
@@ -93,15 +110,15 @@ msgstr ""
 "Isto é não parece ser um arquivo válido do Google Search Console. Por favor, "
 "verifique o arquivo e reenvie."
 
-#: lcmd-tracking-codes.php:265
+#: lcmd-tracking-codes.php:292
 msgid "Google Analytics User"
 msgstr "Usuário do Google Analytics"
 
-#: lcmd-tracking-codes.php:266
+#: lcmd-tracking-codes.php:293
 msgid "UA-XXXXXX-X"
 msgstr "UA-XXXXXX-X"
 
-#: lcmd-tracking-codes.php:267
+#: lcmd-tracking-codes.php:294
 msgid ""
 "Enter your ID Tracking Code for Google Analytics. Please, refer to <a href="
 "\"https://analytics.google.com/analytics/web/\" target=\"_blank\">Google "
@@ -111,46 +128,50 @@ msgstr ""
 "<a href=\"https://analytics.google.com/analytics/web/\" target=\"_blank"
 "\">Google Analytics</a> para obter mais informações."
 
-#: lcmd-tracking-codes.php:269
+#: lcmd-tracking-codes.php:296
 msgid "Invalid format for Google Analytics. Please, enter a UA-XXXX code."
 msgstr ""
 "Formato inválido para o Google Analytics. Por favor, insira um código UA-"
 "XXXX."
 
-#: lcmd-tracking-codes.php:274
+#: lcmd-tracking-codes.php:302
 msgid "Google Tag Manager"
 msgstr "Google Tag Manager"
 
-#: lcmd-tracking-codes.php:275
+#: lcmd-tracking-codes.php:303
 msgid "GTM-XXXXXX"
 msgstr "GTM-XXXXXX"
 
-#: lcmd-tracking-codes.php:276
+#: lcmd-tracking-codes.php:304
 msgid ""
 "Enter your ID Google Tag Manager. Please, refer to <a href=\"https://"
 "tagmanager.google.com\" target=\"_blank\">Google Tag Manager</a> for more "
-"information."
+"information.<br>Also, <strong>Go to <code>Appearence &gt; Editor</code> and "
+"look for <code>header.php</code>. Put this just after &lt;body&gt; tag: "
+"<code>&lt;?php do_action('after_body'); ?&gt;</code></strong>"
 msgstr ""
-"Digite seu ID do Google Tag Manager. Por favor, consulte o<a href=\"https://"
-"tagmanager.google.com\" target=\"_blank\">Google Tag Manager</a> para obter "
-"mais informações."
+"Escreva o seu ID do Google Tag Manager. Por favor consulte <a href=\"https://"
+"tagmanager.google.com\" target=\"_blank\">Google Tag Manager</a> para mais "
+"informações.<br>Além disso, <strong>Vá para <code>Aparência &gt; Editor</"
+"code> e olhe para o <code>header.php</code>. Coloque isto logo após a tag "
+"&lt;body&gt;: <code>&lt;?php do_action('after_body'); ?&gt;</code></strong>"
 
-#: lcmd-tracking-codes.php:278
+#: lcmd-tracking-codes.php:306
 msgid ""
 "Invalid format for Google Tag Manager Id. Please, enter a GTM-XXXX code."
 msgstr ""
 "Formato inválido para ID do Google Tag Manager. Por favor, digite um código "
 "de GTM-XXXX."
 
-#: lcmd-tracking-codes.php:283
+#: lcmd-tracking-codes.php:312
 msgid "Google Ads"
 msgstr "Google Ads"
 
-#: lcmd-tracking-codes.php:284
+#: lcmd-tracking-codes.php:313
 msgid "GA-XXXXXX"
 msgstr "GA-XXXXXX"
 
-#: lcmd-tracking-codes.php:285
+#: lcmd-tracking-codes.php:314
 msgid ""
 "Enter your ID Google Ads. Please, refer to <a href=\"https://ads.google.com"
 "\" target=\"_blank\">Google Ads</a> for more information."
@@ -158,11 +179,11 @@ msgstr ""
 "Digite seu ID do Google Ads. Por favor, consulte <a href=\"https://ads."
 "google.com\" target=\"_blank\">Google Ads</a> para obter mais informações."
 
-#: lcmd-tracking-codes.php:292
+#: lcmd-tracking-codes.php:332
 msgid "Bing Code"
 msgstr "Código do Bing"
 
-#: lcmd-tracking-codes.php:293
+#: lcmd-tracking-codes.php:333
 msgid ""
 "Enter your Bing Code. Please, refer to <a href=\"https://www.bing.com/"
 "toolbox/webmaster\" target=\"_blank\">Bing Webmaster</a> for more "
@@ -172,18 +193,18 @@ msgstr ""
 "www.bing.com/toolbox/webmaster\" target=\"_blank\">Bing Webmaster</a> para "
 "obter mais informações."
 
-#: lcmd-tracking-codes.php:295
+#: lcmd-tracking-codes.php:335
 msgid ""
 "Invalid format for your Bing Code. Please, enter only numbers and letters."
 msgstr ""
 "Formato inválido para o seu código de verificação Bing. Por favor, digite "
 "somente números e letras."
 
-#: lcmd-tracking-codes.php:300
+#: lcmd-tracking-codes.php:341
 msgid "...or Bing Code File"
 msgstr "... ou arquivo de verificação do Bing"
 
-#: lcmd-tracking-codes.php:301
+#: lcmd-tracking-codes.php:342
 msgid ""
 "Upload your Bing File. Please, refer to <a href=\"https://www.bing.com/"
 "toolbox/webmaster\" target=\"_blank\">Bing Webmaster</a> for more "
@@ -193,7 +214,7 @@ msgstr ""
 "href=\"https://www.bing.com/toolbox/webmaster\" target=\"_blank\">Bing "
 "Webmaster</a> para obter mais informações."
 
-#: lcmd-tracking-codes.php:303
+#: lcmd-tracking-codes.php:344
 msgid ""
 "This is not seem to be a valid Bing Webmaster file. Please, verify the file "
 "and resubmit."
@@ -201,19 +222,28 @@ msgstr ""
 "Isso não é parece ser um arquivo válido do Bing Webmaster. Por favor, "
 "verifique o arquivo e reenvie."
 
-#: lcmd-tracking-codes.php:310
+#: lcmd-tracking-codes.php:353
+msgid "Do you want track Contact Form 7 submission no Google Analytics?"
+msgstr ""
+"Deseja acompanhar o envio de Formulário de Contato 7 no Google Analytics?"
+
+#: lcmd-tracking-codes.php:354
+msgid "Set this to true to start tag forms submission."
+msgstr "Defina isto como true para iniciar o envio de formulários de tag."
+
+#: lcmd-tracking-codes.php:363
 msgid "General Tracking Code"
 msgstr "Código de acompanhamento genérico"
 
-#: lcmd-tracking-codes.php:311
+#: lcmd-tracking-codes.php:364
 msgid "Enter a custom tracking code."
 msgstr "Introduza um código de rastreamento personalizado."
 
-#: lcmd-tracking-codes.php:368 lcmd-tracking-codes.php:418
+#: lcmd-tracking-codes.php:459 lcmd-tracking-codes.php:510
 msgid "Invalid file name."
 msgstr "Nome de arquivo inválido."
 
-#: lcmd-tracking-codes.php:479
+#: lcmd-tracking-codes.php:596
 msgid "Settings saved!"
 msgstr "Configurações salvas!"
 
@@ -238,3 +268,19 @@ msgstr "Luciano Closs"
 #. Author URI of the plugin/theme
 msgid "https://lucianocloss.com"
 msgstr "https://lucianocloss.com"
+
+#~ msgid ""
+#~ "Invalid format for Google Verification Code. Please, enter only letters, "
+#~ "numbers and/or underscode."
+#~ msgstr ""
+#~ "Formato inválido para o código de verificação do Google. Por favor, "
+#~ "digite somente letras, números e/ou underscode."
+
+#~ msgid ""
+#~ "Enter your ID Google Tag Manager. Please, refer to <a href=\"https://"
+#~ "tagmanager.google.com\" target=\"_blank\">Google Tag Manager</a> for more "
+#~ "information."
+#~ msgstr ""
+#~ "Digite seu ID do Google Tag Manager. Por favor, consulte o<a href="
+#~ "\"https://tagmanager.google.com\" target=\"_blank\">Google Tag Manager</"
+#~ "a> para obter mais informações."

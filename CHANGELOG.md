@@ -1,4 +1,11 @@
 # Changelog #
+* 1.1.2 * 
+- Fix Google Tag Manager tracking code
+- Traduções
+
+* 1.1.1 * 
+- Fix plugin publish
+
 * 1.1.0 * 
 - Fix General Settings
 - Add Settings tab
